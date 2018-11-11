@@ -38,6 +38,9 @@
             <div class="header-content mx-auto">
               <h1 class="mb-5">Welcome to SherLock!</h1>
               <p>hi hello</p>
+              <?php echo '<p>Hello World</p>'; ?>
+              <p><iframe src="../Output.txt" frameborder="0" height="400"
+      width="95%"></iframe></p>
             </div>
           </div>
           <div class="col-lg-5 my-auto">
