@@ -1,0 +1,1 @@
+picture = "docs/img/beau.png"
