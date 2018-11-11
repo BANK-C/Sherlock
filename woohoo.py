@@ -3,11 +3,12 @@ import webbrowser
 import os
 import subprocess
 import json
+from constants import *
 
 #Code below returns json
 #os.system('curl -X POST -u "apikey:it5MqoTbZ3aZhZM16P6baHVHyBvA6kwouL51KkDWTq2s" --form "images_file=@test.png" --form "classifier_ids=detect_faces" "https://gateway.watsonplatform.net/visual-recognition/api/v3/detect_faces?version=2018-03-19"')
 #cmd = ['curl -X POST -u "apikey:it5MqoTbZ3aZhZM16P6baHVHyBvA6kwouL51KkDWTq2s" --form "images_file=@test.png" --form "classifier_ids=detect_faces" "https://gateway.watsonplatform.net/visual-recognition/api/v3/detect_faces?version=2018-03-19"']
-picture = "baby1.png"
+
 str1 = 'curl -X POST -u "apikey:it5MqoTbZ3aZhZM16P6baHVHyBvA6kwouL51KkDWTq2s" --form "images_file=@'+picture+'" --form "classifier_ids=detect_faces" "https://gateway.watsonplatform.net/visual-recognition/api/v3/detect_faces?version=2018-03-19"'
 #cmd = ['curl', '-X', 'POST', '-u', '"apikey:it5MqoTbZ3aZhZM16P6baHVHyBvA6kwouL51KkDWTq2s"', '--form', '"images_file=@test.png"', '--form', '"classifier_ids=detect_faces"', '"https://gateway.watsonplatform.net/visual-recognition/api/v3/detect_faces?version=2018-03-19"']
 cmd = str1.split(" ")
@@ -22,7 +23,7 @@ d = json.loads(json_acceptable_string)
 age_json = d['images'][0]['faces'][0]['age']
 
 if age_json["min"] < 5:
-	output = "DON'T TOUCH THAT, you're way too young!"
+	output = "DON'T TOUCH THAT!"
 else:
 	output = "Welcome to your cabinet!"
 
