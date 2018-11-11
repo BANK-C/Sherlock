@@ -29,7 +29,7 @@ if age_json["min"] < 5:
 else:
 	output = "Welcome to your cabinet!"
 
-output += "You are probably "+a_str+ "years old"
+output += " You are probably "+a_str+ "years old"
 
 text_file = open("Output.txt", "w")
 text_file.write(output)
