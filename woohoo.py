@@ -26,6 +26,7 @@ a_str = str(age_range)
 
 if age_json["min"] < 5:
 	output = "DON'T TOUCH THAT!"
+	os.system(python3 send_sms.py)
 else:
 	output = "Welcome to your cabinet!"
 
