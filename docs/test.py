@@ -7,6 +7,7 @@ camera = cv2.VideoCapture(0)
 int1 = 0
 while(True):
     _, image = camera.read()
-    cv2.imwrite("test"+'.png', image)
+    cropped = image[0:720, 440:840]
+    cv2.imwrite("test"+'.png', cropped)
     time.sleep(5)
     os.system('python woohoo.py')
