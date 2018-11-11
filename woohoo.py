@@ -21,11 +21,15 @@ json_acceptable_string = o_s.replace("'", "\"")
 d = json.loads(json_acceptable_string)
 
 age_json = d['images'][0]['faces'][0]['age']
+age_range = age_json['min']-age_json['max']
+a_str = str(age_range)
 
 if age_json["min"] < 5:
 	output = "DON'T TOUCH THAT!"
 else:
 	output = "Welcome to your cabinet!"
+
+output += "You are probably "+a_str+ "years old"
 
 text_file = open("Output.txt", "w")
 text_file.write(output)
