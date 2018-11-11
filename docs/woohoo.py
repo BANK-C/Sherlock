@@ -31,7 +31,7 @@ a_str = str(age_range)
 
 if age_json["min"] < 5:
 	output = "DON'T TOUCH THAT!"
-	r = requests.post(url = API_ENDPOINT, data = data) 
+	#r = requests.post(url = API_ENDPOINT, data = data) 
 	#os.system("python send_sms.py")
 	msg = "Your child is attempting to access your cabinet!"
 elif age_json["min"] <25:
@@ -41,6 +41,8 @@ else:
 	output = "Welcome to your cabinet! The food is to your right and the medicine is stored on the left."
 	msg = "Your cabinet welcomes you ;)"
 
+
+r = requests.post(url = API_ENDPOINT, data = data) 
 send_sms(msg)
 output += " You are probably "+a_str+ "years old."
 

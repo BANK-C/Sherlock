@@ -17,6 +17,8 @@ while(True):
     cropped = image[0:height, crop_w:crop_w2]
 
 
-    cv2.imwrite("test"+'.png', cropped)
+
+    #cv2.imwrite("test.png", cropped)
+    cv2.imwrite("test.png", image)
     time.sleep(5)
     os.system('python woohoo.py')
