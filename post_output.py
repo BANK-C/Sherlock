@@ -8,7 +8,7 @@ API_ENDPOINT = "http://172.20.10.3:8090/speaker"
 
 # your API key here 
 API_KEY = "it5MqoTbZ3aZhZM16P6baHVHyBvA6kwouL51KkDWTq2s"
-URL = 
+URL = "https://github.com/BANK-C/Sherlock/blob/master/No%2C%20Don't%20Touch%20That!.mp3"
 SERVICE = "bank-c"
 
   
