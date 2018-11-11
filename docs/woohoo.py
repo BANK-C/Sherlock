@@ -3,6 +3,7 @@ import webbrowser
 import os
 import subprocess
 import json
+from send_sms import *
 from constants import *
 
 #Code below returns json
@@ -26,13 +27,37 @@ a_str = str(age_range)
 
 if age_json["min"] < 5:
 	output = "DON'T TOUCH THAT!"
+	#os.system("python send_sms.py")
+	msg = "Your child is attempting to access your cabinet!"
+elif age_json["min"] <25:
+	output = "Hey there, college student! Snacks are to your left."
+	msg = "The snacks are getting raided! Time to replenish?"
 else:
-	output = "Welcome to your cabinet!"
+	output = "Welcome to your cabinet! The food is to your right and the medicine is stored on the left."
+	msg = "Your cabinet welcomes you ;)"
 
+send_sms(msg)
 output += " You are probably "+a_str+ "years old."
 
-text_file = open("Output.txt", "w")
+text_file = open("Output.html", "w")
+text_file.write('<html> \n')
+text_file.write('<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"><link href="css/new-age.min.css" rel="stylesheet">')
+text_file.write('<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"> \n')
+text_file.write('<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> \n')
+text_file.write('<link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" \n>')
+text_file.write('<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">\n')
+
+text_file.write('<div class="container h-100"><div class="row h-100"><div class="col-lg-7 my-auto"><div class="header-content mx-auto">')
+
+text_file.write('<p> \n')
 text_file.write(output)
+text_file.write('</p> \n')
+
+text_file.write('</div></div></div></div>')
+
+
+
+text_file.write('</html>')
 text_file.close()
 #print(d['images'][0]['faces'][0]['age'])
 #result = subprocess.run(['ls', '-l'], stdout=subprocess.PIPE)
