@@ -7,8 +7,8 @@ import requests
 from send_sms import *
 from constants import *
 
-API_ENDPOINT = "http://172.20.10.3:8090/speaker"
-data = "<play_info><app_key>LLByt8cKG3OHgidKW5VG9hD9nm8SeMAh</app_key><url>https://00e9e64bac2b299c6556317d0e7dbb096fe450eced9767a795-apidata.googleusercontent.com/download/storage/v1/b/bank-c/o/No,%20Don't%20Touch%20That!%20-%20SOUND%20EFFECT.mp3?qk=AD5uMEvlWvRA8hqYQLuF_dkHjFsg9JffKOZFWxqncIq9-5z3EQJqnIg5Hu4Q-BWD-bjhep6Xoyl_3nJ5GFfRmjte0G1nbG2PIaOUxQEyiVWqHTB-lqcZj6Mk4jc8q9cxfy2W70unEfom-A5b434EWwBY2ba_1fj8zO3pVQ7f_beJRbRcvZrztIRCHcs0K6h0vtSc-lGFjcITcFI9qDYnR2qPssSscqDFG99ZDOKnOmijvmb7MWUgnMC3k6CO98Zyk1gSzO9RmMkfl1aeNR7iPEopHh8clOsFeoofpTakLUVI2MRzat6OOEGne4zNOJzUmTcjVWNGQeGsjExMrEcUqKtYqoaB1Ge_MK0a_uVn-QBsfF1ixMdTibkg4jd6iK5ki6g_G8lT6eU3s386eiyugIE9pizw-ZvhqcHcz_mAVjwmkaLGMuTt7TQofySSLbhbn4KTsdOirwGtFLbv5f28uYP7BBuqCtNMxQcLagNH_xRw0Zs-rKBpu6k4Ziozzzpky5CsOF3GENFQONUACS-0WJzDu7WfIF3hVJIWviMt7htXCdI8Er6w_yZG_88u8cKFXKcU3KoNs3CEHsfR26e5j0W_0GSN-A28BQwbOnw4jiN0h_WKuhsM1HM8MA2uvgPnaNO8Wc3auS2Y7e4h6sFWEaCAPSd-ZCE3xPX6LemGp3WH-ThhI9hy5v2cWU4ogCLxPUTNV3qy5V5pRwb_FlvHaTuwog402dcOjha0hOuV8ie6c03Ux-n8niLsjXv2AHu5Qur2CUjXjBIQNjL6URNJvAd5MnUR1nd_wqs-6Yr-NZ4eRodohi5JabXdxxxpkTdbHwRgapclDSnB</url><service>SERVICE</service><reason>OPTIONAL</reason><message>OPTIONAL</message><volume>25</volume></play_info>"
+API_ENDPOINT = "http://172.20.10.9:8090/speaker"
+data = "<play_info><app_key>LLByt8cKG3OHgidKW5VG9hD9nm8SeMAh</app_key><url>https://storage.googleapis.com/bank-c/No%2C%20Don't%20Touch%20That!%20-%20SOUND%20EFFECT.mp3</url><service>SERVICE</service><reason>OPTIONAL</reason><message>OPTIONAL</message><volume>25</volume></play_info>"
 
 #Code below returns json
 #os.system('curl -X POST -u "apikey:it5MqoTbZ3aZhZM16P6baHVHyBvA6kwouL51KkDWTq2s" --form "images_file=@test.png" --form "classifier_ids=detect_faces" "https://gateway.watsonplatform.net/visual-recognition/api/v3/detect_faces?version=2018-03-19"')
@@ -38,6 +38,7 @@ if age_json["min"] < 5:
 elif age_json["min"] <25:
 	output = "Hey there, college student! Snacks are to your left."
 	msg = "The snacks are getting raided! Time to replenish?"
+	r = requests.post(url = API_ENDPOINT, data = data) 
 else:
 	output = "Welcome to your cabinet! The food is to your right and the medicine is stored on the left."
 	msg = "Your cabinet welcomes you ;)"
