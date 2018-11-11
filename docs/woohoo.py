@@ -17,7 +17,7 @@ data = "<play_info><app_key>LLByt8cKG3OHgidKW5VG9hD9nm8SeMAh</app_key><url>https
 str1 = 'curl -X POST -u "apikey:it5MqoTbZ3aZhZM16P6baHVHyBvA6kwouL51KkDWTq2s" --form "images_file=@'+"test.png"+'" --form "classifier_ids=detect_faces" "https://gateway.watsonplatform.net/visual-recognition/api/v3/detect_faces?version=2018-03-19"'
 #cmd = ['curl', '-X', 'POST', '-u', '"apikey:it5MqoTbZ3aZhZM16P6baHVHyBvA6kwouL51KkDWTq2s"', '--form', '"images_file=@test.png"', '--form', '"classifier_ids=detect_faces"', '"https://gateway.watsonplatform.net/visual-recognition/api/v3/detect_faces?version=2018-03-19"']
 cmd = str1.split(" ")
-print(cmd)
+#print(cmd)
 result = subprocess.run(cmd, stdout=subprocess.PIPE)
 output=subprocess.check_output(str1)
 o_s = output.decode('utf-8')
@@ -34,6 +34,7 @@ if age_json["min"] < 5:
 	#r = requests.post(url = API_ENDPOINT, data = data) 
 	#os.system("python send_sms.py")
 	msg = "Your child is attempting to access your cabinet!"
+	r = requests.post(url = API_ENDPOINT, data = data) 
 elif age_json["min"] <25:
 	output = "Hey there, college student! Snacks are to your left."
 	msg = "The snacks are getting raided! Time to replenish?"
@@ -42,7 +43,6 @@ else:
 	msg = "Your cabinet welcomes you ;)"
 
 
-r = requests.post(url = API_ENDPOINT, data = data) 
 send_sms(msg)
 output += " You are probably "+a_str+ "years old."
 

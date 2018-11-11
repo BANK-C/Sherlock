@@ -8,7 +8,7 @@ int1 = 0
 while(True):
     _, image = camera.read()
 
-    print(image.shape)
+    #print(image.shape)
 
     height = image.shape[0]
     width = image.shape[1]
@@ -21,4 +21,4 @@ while(True):
     #cv2.imwrite("test.png", cropped)
     cv2.imwrite("test.png", image)
     time.sleep(5)
-    os.system('python3 woohoo.py')
+    os.system('python woohoo.py')
