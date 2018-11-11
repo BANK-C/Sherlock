@@ -3,7 +3,8 @@ import time
 import uuid
 
 camera = cv2.VideoCapture(0)
+int1 = 0
 while(True):
     _, image = camera.read()
-    cv2.imwrite(str(uuid.uuid4())+'.png', image)
+    cv2.imwrite("test"+str(int1)+'.png', image)
     time.sleep(5)
