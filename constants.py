@@ -1,1 +1,1 @@
-picture = "test.png"
+picture = "docs/img/beau.png"
