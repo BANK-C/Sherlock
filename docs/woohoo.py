@@ -36,7 +36,7 @@ else:
 	output = "Welcome to your cabinet! The food is to your right and the medicine is stored on the left."
 	msg = "Your cabinet welcomes you ;)"
 
-#send_sms(msg)
+send_sms(msg)
 output += " You are probably "+a_str+ "years old."
 
 text_file = open("Output.html", "w")
